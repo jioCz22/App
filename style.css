@@ -1,0 +1,367 @@
+/* ===============================
+   🎨 Paleta de colores romántica
+   =============================== */
+:root {
+  --primary: #ff3366;
+  --primary-light: #ffd6e0;
+  --background: #fff;
+  --text: #333;
+  --accent: #ff5c8d;
+}
+
+/* 🌙 Modo oscuro */
+body.dark {
+  --background: #1a1a1a;
+  --text: #f5f5f5;
+  --primary-light: #a03d56;
+}
+
+/* ===============================
+   📱 Reset básico
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   📄 Fondo y fuente
+   =============================== */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-image: url("img/fto.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark .container {
+  background: rgba(20, 20, 20, 0.85);
+}
+
+/* ===============================
+   📦 Contenedor central
+   =============================== */
+.container {
+  text-align: center;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   🏷️ Encabezados
+   =============================== */
+h1 {
+  color: #e75480;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ===============================
+   ⏳ Contador
+   =============================== */
+#main-count {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff1493;
+  margin: 1rem 0;
+}
+
+/* ===============================
+   ⏳ Próximo hito destacado
+   =============================== */
+#next-countdown {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  background: linear-gradient(90deg, #ff3366, #ff85a2, #b36bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(255, 51, 102, 0.2);
+}
+
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===============================
+   📅 Hitos
+   =============================== */
+#milestones-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+#milestones-list li {
+  background: linear-gradient(135deg, #ffb3c6, #ffd6e0, #ffe4f2);
+  margin: 0.7rem 0;
+  padding: 0.9rem;
+  border-radius: 16px;
+  color: #d63384; /* 💕 Texto rosado fuerte */
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 51, 102, 0.2);
+  border: 2px solid #ff85a2; /* marco suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#milestones-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 92, 141, 0.3);
+  background: linear-gradient(135deg, #ffe0eb, #ffd6f5, #fff0f5);
+}
+
+
+/* ===============================
+   💕 Frases románticas
+   =============================== */
+.love-quote {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #e91e63;
+  margin: 1.5rem auto;
+  transition: opacity 0.5s ease;
+  max-width: 90%;
+  text-align: center;
+}
+
+.love-quote.animate {
+  animation: fadeInSlide 1s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   📸 Galería
+   =============================== */
+.gallery-section {
+  margin-top: 2rem;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery img {
+  height: 150px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.gallery::-webkit-scrollbar-thumb {
+  background: #e75480;
+  border-radius: 10px;
+}
+.gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+   background: var(--primary-light);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);   
+  border-radius: 12px; overflow: hidden;    
+   transition: transform 0.2s; cursor: pointer; 
+  }
+
+.description {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 5px;
+  text-align: center;
+  max-width: 150px;
+}*/
+
+/* ===============================
+   🖼️ Modal
+   =============================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  padding-top: 60px;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  animation: zoomIn 0.3s ease forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes zoomIn {
+  to { opacity: 1; transform: scale(1); }
+}
+
+.caption {
+  margin: auto;
+  text-align: center;
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===============================
+   🌙 Botón modo oscuro
+   =============================== */
+#theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: all 1.7s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+#theme-toggle:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+#theme-toggle .icon {
+  font-size: 1.3rem;
+  transition: transform 0.4s ease;
+}
+
+#theme-toggle .label {
+  font-size: 0.95rem;
+}
+/* ===============================
+   📱 Versión móvil reducida
+   =============================== */
+@media (max-width: 520px) {
+  #theme-toggle {
+    padding: 0.6rem;
+    border-radius: 40%;
+    font-size: 1.3rem; /* emoji más grande */
+    gap: 0; /* elimina el espacio */
+    justify-content: center;
+  }
+
+  #theme-toggle .label {
+    display: none; /* Oculta el texto */
+  }
+}
+/* ===============================
+   📱 Botones generales
+   =============================== */
+button, .add-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem auto;
+  display: block;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .add-btn:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+/* ===============================
+   📱 Responsive
+   =============================== */
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  #main-count { font-size: 2.2rem; }
+  li { font-size: 1rem; }
+  .love-quote { font-size: 1rem; }
+  .gallery img { height: 120px; }
+  #theme-toggle { font-size: 0.9rem; padding: 0.5rem 1rem; }
+  #theme-toggle .icon { font-size: 1.1rem; }
+  #theme-toggle .label { font-size: 0.9rem; }
+}
