@@ -10,15 +10,16 @@
   "lang": "es",
   "icons": [
     {
-      "src": "icons/corazon192.png",
+      "src": "ico/corazon192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/corazon512.png",
+      "src": "ico/corazon512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
 
   ]
 }
+
